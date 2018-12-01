@@ -7,7 +7,7 @@
 custom_solver_bias = 0.0
 radius = 41.2311
 
-[node name="Trashcan" type="StaticBody2D" index="0" groups=[
+[node name="Trashcan" type="StaticBody2D" groups=[
 "is_trashcan",
 ]]
 
