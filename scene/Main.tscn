@@ -1,11 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://scene/Card.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene/CardHandler.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene/CardPicker.tscn" type="PackedScene" id=2]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node2D"]
 
-[node name="Card" parent="." index="0" instance=ExtResource( 1 )]
+z_index = 2
+_sections_unfolded = [ "Pause", "Z Index" ]
 
-position = Vector2( 318.005, 200.554 )
+[node name="CardHandler" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 510, 300 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
+
+[node name="CardPicker" parent="." index="1" instance=ExtResource( 2 )]
 
 
