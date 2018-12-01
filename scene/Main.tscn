@@ -4,7 +4,7 @@
 [ext_resource path="res://scene/CardHandler.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scene/CardPicker.tscn" type="PackedScene" id=3]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 z_index = 2
 _sections_unfolded = [ "Pause", "Z Index" ]
@@ -21,5 +21,21 @@ position = Vector2( 510, 300 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="CardPicker" parent="." index="2" instance=ExtResource( 3 )]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
+
+input_pickable = false
+collision_layer = 1024
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -20, -20, -20, 620, 1044, 620, 1044, -20, -20, -20, 0, 0, 1024, 0, 1024, 600, 0, 600, 0, 0 )
 
 
