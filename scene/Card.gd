@@ -1,7 +1,10 @@
-extends Area2D
+extends RigidBody2D
 signal hit
 
-var lifted = false
+export (PackedScene) var TouchDragPhysics
+
+var draggableBody = null
+var dragJoint = null
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -10,10 +13,27 @@ func _ready():
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and not event.pressed:
-		lifted = false
-	if lifted and event is InputEventMouseMotion:
-		position += event.relative
+		drop()
+	if (draggableBody != null) and event is InputEventMouseMotion:
+		draggableBody.position += event.relative
 
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		lifted = true
+		lift()
+
+func lift():
+	draggableBody = TouchDragPhysics.instance()
+	draggableBody.position = self.position
+	get_parent().add_child(draggableBody)
+	
+	dragJoint = PinJoint2D.new()
+	dragJoint.set_node_a(draggableBody.get_path())
+	dragJoint.set_node_b(get_path())
+	get_parent().add_child(dragJoint)
+
+func drop():
+	dragJoint.queue_free()
+	dragJoint = null
+	
+	get_parent().remove_child(draggableBody)
+	draggableBody = null

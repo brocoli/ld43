@@ -1,30 +1,41 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scene/Card.gd" type="Script" id=1]
-[ext_resource path="res://art/card.png" type="Texture" id=2]
+[ext_resource path="res://scene/TouchDragPhysics.tscn" type="PackedScene" id=2]
+[ext_resource path="res://art/card.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 31.8622, 57.2465 )
 
-[node name="Card" type="Area2D"]
+[node name="Card" type="RigidBody2D" index="0"]
 
 input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
+collision_layer = 1
+collision_mask = 1
+mode = 2
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 0.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
+_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pickable" ]
+TouchDragPhysics = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
