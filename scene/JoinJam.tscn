@@ -5,7 +5,7 @@
 [ext_resource path="res://art/play_again_pressed.png" type="Texture" id=3]
 [ext_resource path="res://scene/PlayAgain.gd" type="Script" id=4]
 
-[node name="JoinJam" type="Node" index="0"]
+[node name="JoinJam" type="Node"]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
