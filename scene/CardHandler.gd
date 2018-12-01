@@ -33,9 +33,9 @@ func _unhandled_input(event):
 	if event is InputEventMouseButton and not event.pressed and focusedCard != null:
 		get_tree().set_input_as_handled()
 		drop_card()
-		
+
+func _input(event):
 	if focusedCard != null and event is InputEventMouseMotion:
-		get_tree().set_input_as_handled()
 		draggableBody.position += event.relative
 
 

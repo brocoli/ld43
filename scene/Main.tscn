@@ -10,9 +10,8 @@
 [ext_resource path="res://art/bail_out.png" type="Texture" id=8]
 [ext_resource path="res://art/bail_out_pressed.png" type="Texture" id=9]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node"]
 
-z_index = 2
 _sections_unfolded = [ "Pause", "Z Index" ]
 
 [node name="Background" type="Sprite" parent="." index="0"]
@@ -68,6 +67,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
