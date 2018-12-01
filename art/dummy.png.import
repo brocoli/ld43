@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/asset_bg.png-c9524ad4b42dae6f1505c808ff0cfc10.stex"
+path="res://.import/dummy.png-268dfa41b0386d25e58a922f7f6b40a5.stex"
 
 [deps]
 
-source_file="res://scene/asset_bg.png"
-dest_files=[ "res://.import/asset_bg.png-c9524ad4b42dae6f1505c808ff0cfc10.stex" ]
+source_file="res://art/dummy.png"
+dest_files=[ "res://.import/dummy.png-268dfa41b0386d25e58a922f7f6b40a5.stex" ]
 
 [params]
 
