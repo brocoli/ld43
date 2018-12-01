@@ -3,6 +3,9 @@ extends RigidBody2D
 func _on_Card_body_entered(body):
 	var trashcan = get_node("/root/Main/Trashcan")
 	if body == trashcan:
+		var joinJamButton = get_node("/root/Main/JoinJam")
+		joinJamButton.check_no_bad_cards()
+		
 		cancel_touches()
 		self.queue_free()
 

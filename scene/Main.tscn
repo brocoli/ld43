@@ -1,24 +1,24 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://scene/Main.gd" type="Script" id=1]
-[ext_resource path="res://art/asset_bg.png" type="Texture" id=2]
-[ext_resource path="res://scene/Trashcan.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scene/CardHandler.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scene/CardPicker.tscn" type="PackedScene" id=5]
-[ext_resource path="res://art/join_jam.png" type="Texture" id=6]
-[ext_resource path="res://art/join_jam_pressed.png" type="Texture" id=7]
-[ext_resource path="res://art/join_jam_disabled.png" type="Texture" id=8]
+[ext_resource path="res://art/asset_bg.png" type="Texture" id=1]
+[ext_resource path="res://scene/Trashcan.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scene/CardHandler.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/CardPicker.tscn" type="PackedScene" id=4]
+[ext_resource path="res://art/join_jam.png" type="Texture" id=5]
+[ext_resource path="res://art/join_jam_pressed.png" type="Texture" id=6]
+[ext_resource path="res://art/join_jam_disabled.png" type="Texture" id=7]
+[ext_resource path="res://scene/JoinJam.gd" type="Script" id=8]
 [ext_resource path="res://art/bail_out.png" type="Texture" id=9]
 [ext_resource path="res://art/bail_out_pressed.png" type="Texture" id=10]
+[ext_resource path="res://scene/BailOut.gd" type="Script" id=11]
 
-[node name="Main" type="Node" index="0"]
+[node name="Main" type="Node"]
 
-script = ExtResource( 1 )
 _sections_unfolded = [ "Pause", "Z Index" ]
 
 [node name="Background" type="Sprite" parent="." index="0"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 offset = Vector2( 512, 300 )
 _sections_unfolded = [ "Offset" ]
 
@@ -38,21 +38,21 @@ _sections_unfolded = [ "Collision" ]
 build_mode = 0
 polygon = PoolVector2Array( -20, -20, -20, 620, 1044, 620, 1044, -20, -20, -20, 0, 0, 1024, 0, 1024, 600, 0, 600, 0, 0 )
 
-[node name="Trashcan" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Trashcan" parent="." index="2" instance=ExtResource( 2 )]
 
 position = Vector2( 850, 420 )
 
-[node name="CardHandler" parent="." index="3" instance=ExtResource( 4 )]
+[node name="CardHandler" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 380, 240 )
 z_index = 1
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
-[node name="CardPicker" parent="." index="4" instance=ExtResource( 5 )]
+[node name="CardPicker" parent="." index="4" instance=ExtResource( 4 )]
 
 z_index = 2
 
-[node name="Join Jam" type="TextureButton" parent="." index="5"]
+[node name="JoinJam" type="TextureButton" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -74,12 +74,13 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_disabled = ExtResource( 8 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_disabled = ExtResource( 7 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Textures", "Theme" ]
 
-[node name="TextureButton" type="TextureButton" parent="." index="6"]
+[node name="BailOut" type="TextureButton" parent="." index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -102,10 +103,11 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 10 )
+script = ExtResource( 11 )
 _sections_unfolded = [ "Textures" ]
 
-[connection signal="pressed" from="Join Jam" to="." method="_on_Join_Jam_pressed"]
+[connection signal="pressed" from="JoinJam" to="JoinJam" method="_on_JoinJam_pressed"]
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="BailOut" to="BailOut" method="_on_BailOut_pressed"]
 
 
