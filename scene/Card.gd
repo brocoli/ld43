@@ -1,4 +1,5 @@
 extends Area2D
+signal hit
 
 var lifted = false
 
