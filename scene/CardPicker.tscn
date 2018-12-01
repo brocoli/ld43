@@ -7,9 +7,9 @@
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="CardPicker" type="Area2D"]
+[node name="CardPicker" type="Area2D" index="0"]
 
-input_pickable = false
+input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
@@ -17,7 +17,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
+_sections_unfolded = [ "Audio Bus", "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -26,6 +26,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="ColorRect" type="ColorRect" parent="." index="1"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -41,6 +42,6 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.0285645, 0.28125, 0.0561961, 0.501961 )
-_sections_unfolded = [ "Margin" ]
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
 
 

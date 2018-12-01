@@ -29,11 +29,13 @@ func spawn_card(i):
 	
 	add_child(card)
 
-func _input(event):
+func _unhandled_input(event):
 	if event is InputEventMouseButton and not event.pressed and focusedCard != null:
+		get_tree().set_input_as_handled()
 		drop_card()
-
+		
 	if focusedCard != null and event is InputEventMouseMotion:
+		get_tree().set_input_as_handled()
 		draggableBody.position += event.relative
 
 
@@ -52,6 +54,7 @@ func try_lift_card(bodies):
 			lift_card(card)
 
 func lift_card(card):
+	get_tree().set_input_as_handled()
 	focusedCard = card
 
 	draggableBody = TouchDragPhysics.instance()
