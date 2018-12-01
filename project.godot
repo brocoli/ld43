@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="LD43"
-run/main_scene="res://scene/Card.tscn"
+run/main_scene="res://scene/Main.tscn"
 config/icon="res://icon.png"
 
 [display]
