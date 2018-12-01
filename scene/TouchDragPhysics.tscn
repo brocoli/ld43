@@ -5,7 +5,7 @@
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="TouchDragPhysics" type="KinematicBody2D" index="0"]
+[node name="TouchDragPhysics" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -17,7 +17,15 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform", "Z Index", "collisi
 
 shape = SubResource( 1 )
 
-[node name="ColorRect" type="ColorRect" parent="." index="1"]
+[node name="PinJoint2D" type="PinJoint2D" parent="." index="1"]
+
+node_a = NodePath("..")
+node_b = NodePath("")
+bias = 0.0
+disable_collision = true
+softness = 0.0
+
+[node name="ColorRect" type="ColorRect" parent="." index="2"]
 
 visible = false
 anchor_left = 0.0
