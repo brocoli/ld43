@@ -6,21 +6,52 @@ export (int) var amountGoodCards
 export (int) var amountBadCards
 export (float) var radius
 
+export (String) var targetTheme
+
 var focusedCard
 var draggableBody
 
 var amtGood
 var amtBad
 
+var sortedGameIdeas
+
 func _ready():
 	seed(OS.get_unix_time())
+	
+	var gameIdeasFile = File.new()
+	gameIdeasFile.open("res://texts/gameIdeas.json", gameIdeasFile.READ)
+	var gameIdeasText = gameIdeasFile.get_as_text()
+	gameIdeasFile.close()
+	
+	var gameIdeas = parse_json(gameIdeasText)
+	sortedGameIdeas = sort_game_ideas(gameIdeas)
+
 	spawn_cards()
 
-func spawn_cards():
-	amtGood = amountGoodCards
-	amtBad = amountBadCards
+func sort_game_ideas(gameIdeas):
+	var sortedGood = []
+	var sortedBad = []
 	
-	for i in range(amountGoodCards + amountBadCards):
+	for theme in gameIdeas:
+		var ideas = gameIdeas[theme]
+		if theme == targetTheme:
+			for idea in ideas:
+				sortedGood.append(idea)
+		else:
+			for idea in ideas:
+				sortedBad.append(idea)
+	
+	return {
+		"good": sortedGood,
+		"bad": sortedBad,
+	}
+
+func spawn_cards():
+	amtGood = min(amountGoodCards, sortedGameIdeas["good"].size())
+	amtBad = min(amountBadCards, sortedGameIdeas["bad"].size())
+	
+	for i in range(amtGood + amtBad):
 		spawn_card(i)
 
 func spawn_card(i):
@@ -49,10 +80,22 @@ func set_card_good_or_bad(card):
 func set_card_good(card):
 	amtGood -= 1
 	card.add_to_group("is_good_card")
+	
+	set_card_text(card, sortedGameIdeas["good"])
 
 func set_card_bad(card):
 	amtBad -= 1
 	card.add_to_group("is_bad_card")
+	
+	set_card_text(card, sortedGameIdeas["bad"])
+
+func set_card_text(card, textsArray):
+	var textsArraySize = textsArray.size()
+	var randKey = floor(rand_range(0, textsArraySize))
+	var selectedText = textsArray[randKey]
+	textsArray.remove(randKey)
+	
+	card.get_node("IdeaLabel").set_text(selectedText)
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and not event.pressed and focusedCard != null:

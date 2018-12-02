@@ -11,9 +11,10 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 Card = ExtResource( 2 )
 TouchDragPhysics = ExtResource( 3 )
-amountGoodCards = null
-amountBadCards = null
+amountGoodCards = 3
+amountBadCards = 10
 radius = 50.0
+targetTheme = "Sacrifices must be made"
 
 [node name="Debug" type="Sprite" parent="." index="0"]
 
