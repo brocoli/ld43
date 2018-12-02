@@ -12,7 +12,7 @@
 [ext_resource path="res://art/Buttons/botao_bailOuthoverP.png" type="Texture" id=10]
 [ext_resource path="res://scene/BailOut.gd" type="Script" id=11]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 _sections_unfolded = [ "Pause", "Z Index" ]
 
@@ -61,10 +61,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 220.0
-margin_top = 20.0
-margin_right = 380.0
-margin_bottom = 80.0
+margin_left = 170.0
+margin_top = 10.0
+margin_right = 315.0
+margin_bottom = 105.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -79,7 +79,6 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
-texture_hover = ExtResource( 6 )
 texture_disabled = ExtResource( 7 )
 script = ExtResource( 8 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Textures", "Theme" ]
@@ -90,10 +89,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 30.0
-margin_top = 20.0
-margin_right = 190.0
-margin_bottom = 80.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 155.0
+margin_bottom = 105.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -107,7 +106,6 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 10 )
-texture_hover = ExtResource( 10 )
 script = ExtResource( 11 )
 _sections_unfolded = [ "Textures" ]
 
