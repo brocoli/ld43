@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scene/Card.gd" type="Script" id=1]
 [ext_resource path="res://art/card.png" type="Texture" id=2]
-[ext_resource path="res://font/Chunkfive.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://art/thought.png" type="Texture" id=3]
+[ext_resource path="res://font/Chunkfive.otf" type="DynamicFontData" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -14,7 +15,7 @@ extents = Vector2( 31.8622, 57.2465 )
 size = 18
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
 
 [node name="Card" type="RigidBody2D" index="0" groups=[
@@ -47,12 +48,17 @@ _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Mate
 shape = SubResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="Background" type="Sprite" parent="." index="1"]
 
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
-[node name="IdeaLabel" type="Label" parent="." index="2"]
+[node name="Icon" type="Sprite" parent="." index="2"]
+
+position = Vector2( 0, -45 )
+texture = ExtResource( 3 )
+
+[node name="IdeaLabel" type="Label" parent="." index="3"]
 
 modulate = Color( 0, 0, 0, 1 )
 self_modulate = Color( 0, 0, 0, 1 )
