@@ -27,9 +27,9 @@ func spawn_card(i):
 	var distance = rand_range(0, radius)
 	var angle = rand_range(0, 2*PI)
 	var pos = Vector2(distance*cos(angle), distance*sin(angle))
-
+	
 	var rot = rand_range(0, 2*PI)
-
+	
 	var card = Card.instance()
 	card.position = pos
 	card.rotation = rot
@@ -73,7 +73,7 @@ func try_lift_card(bodies):
 			if max_z < new_z:
 				max_z = new_z
 				card = body
-
+		
 		if card != null:
 			lift_card(card)
 
