@@ -27,3 +27,12 @@ func try_throw_card_away():
 			get_node("/root/Main/JoinJam/Bop").bop()
 		
 		self.queue_free()
+
+
+func _on_Control_gui_input(event):
+	if event is InputEventMouseButton: 
+		var cardHandler = get_node("/root/Main/CardHandler")
+		if event.pressed:
+			cardHandler.try_lift_card(self)
+		else:
+			cardHandler.try_drop_card()

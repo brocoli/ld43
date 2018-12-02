@@ -99,30 +99,15 @@ func set_card_text(card, textsArray):
 	
 	card.get_node("IdeaLabel").set_text(selectedText)
 
-func _unhandled_input(event):
-	if event is InputEventMouseButton and not event.pressed and focusedCard != null:
-		drop_card()
-
 func _input(event):
 	if focusedCard != null and event is InputEventMouseMotion:
 		draggableBody.position += event.relative
 
-func try_lift_card(bodies):
+func try_lift_card(card):
 	if focusedCard == null:
-		var card = null
-		var max_z = -INF
-		
-		for body in bodies:
-			var new_z = body.z_index
-			if max_z < new_z:
-				max_z = new_z
-				card = body
-		
-		if card != null:
-			lift_card(card)
+		lift_card(card)
 
 func lift_card(card):
-	get_tree().set_input_as_handled()
 	focusedCard = card
 
 	draggableBody = TouchDragPhysics.instance()
@@ -132,9 +117,9 @@ func lift_card(card):
 	var joint = draggableBody.get_node("PinJoint2D")
 	joint.set_node_b(card.get_path())
 
-func drop_card():
-	get_tree().set_input_as_handled()
-	get_node("/root/Main").remove_child(draggableBody)
-	draggableBody = null
-
-	focusedCard = null
+func try_drop_card():
+	if focusedCard != null:
+		get_node("/root/Main").remove_child(draggableBody)
+		draggableBody = null
+	
+		focusedCard = null
