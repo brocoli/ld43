@@ -1,7 +1,7 @@
 extends Tween
 
 export (float) var period
-export (int) var amplitude
+export (float) var amplitude
 
 func shake_screen():
 	connect("tween_completed", self, "_shake_right")

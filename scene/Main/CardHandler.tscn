@@ -13,7 +13,8 @@ Card = ExtResource( 2 )
 TouchDragPhysics = ExtResource( 3 )
 amountGoodCards = 3
 amountBadCards = 10
-radius = 50.0
+radiusX = 40.0
+radiusY = 20.0
 targetTheme = "Sacrifices must be made"
 
 [node name="Debug" type="Sprite" parent="." index="0"]

@@ -4,7 +4,8 @@ export (PackedScene) var Card
 export (PackedScene) var TouchDragPhysics
 export (int) var amountGoodCards
 export (int) var amountBadCards
-export (float) var radius
+export (float) var radiusX
+export (float) var radiusY
 
 export (String) var targetTheme
 
@@ -55,9 +56,10 @@ func spawn_cards():
 		spawn_card(i)
 
 func spawn_card(i):
-	var distance = rand_range(0, radius)
+	var distanceX = rand_range(0, radiusX)
+	var distanceY = rand_range(0, radiusY)
 	var angle = rand_range(0, 2*PI)
-	var pos = Vector2(distance*cos(angle), distance*sin(angle))
+	var pos = Vector2(distanceX*cos(angle), distanceY*sin(angle))
 	
 	var rot = rand_range(0, 2*PI)
 	
@@ -104,7 +106,6 @@ func _unhandled_input(event):
 func _input(event):
 	if focusedCard != null and event is InputEventMouseMotion:
 		draggableBody.position += event.relative
-
 
 func try_lift_card(bodies):
 	if focusedCard == null:
