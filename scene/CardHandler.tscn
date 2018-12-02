@@ -11,11 +11,13 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 Card = ExtResource( 2 )
 TouchDragPhysics = ExtResource( 3 )
-amount = 20
+amountGoodCards = null
+amountBadCards = null
 radius = 50.0
 
 [node name="Debug" type="Sprite" parent="." index="0"]
 
+visible = false
 modulate = Color( 0.490902, 0.109726, 0.597656, 0.501961 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Material", "Visibility" ]

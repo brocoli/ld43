@@ -2,17 +2,25 @@ extends Node
 
 export (PackedScene) var Card
 export (PackedScene) var TouchDragPhysics
-export (int) var amount
+export (int) var amountGoodCards
+export (int) var amountBadCards
 export (float) var radius
 
 var focusedCard
 var draggableBody
 
+var amtGood
+var amtBad
+
 func _ready():
+	seed(OS.get_unix_time())
 	spawn_cards()
 
 func spawn_cards():
-	for i in range(amount):
+	amtGood = amountGoodCards
+	amtBad = amountBadCards
+	
+	for i in range(amountGoodCards + amountBadCards):
 		spawn_card(i)
 
 func spawn_card(i):
@@ -27,7 +35,24 @@ func spawn_card(i):
 	card.rotation = rot
 	card.z_index = i
 	
+	set_card_good_or_bad(card)
+	
 	add_child(card)
+
+func set_card_good_or_bad(card):
+	var rand = floor(rand_range(0, amtGood+amtBad))
+	if rand < amtGood:
+		set_card_good(card)
+	else:
+		set_card_bad(card)
+
+func set_card_good(card):
+	amtGood -= 1
+	card.add_to_group("is_good_card")
+
+func set_card_bad(card):
+	amtBad -= 1
+	card.add_to_group("is_bad_card")
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and not event.pressed and focusedCard != null:

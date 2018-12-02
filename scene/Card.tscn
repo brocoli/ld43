@@ -9,7 +9,6 @@ custom_solver_bias = 0.0
 extents = Vector2( 31.8622, 57.2465 )
 
 [node name="Card" type="RigidBody2D" groups=[
-"is_bad_card",
 "is_card",
 ]]
 

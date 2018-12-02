@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 radius = 70.0
 
-[node name="Trashcan" type="Area2D" index="0" groups=[
+[node name="Trashcan" type="Area2D" groups=[
 "is_trashcan",
 ]]
 
@@ -29,6 +29,7 @@ shape = SubResource( 1 )
 
 [node name="Debug" type="Sprite" parent="." index="1"]
 
+visible = false
 modulate = Color( 0.847656, 0.816743, 0.0562897, 0.501961 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Visibility" ]
