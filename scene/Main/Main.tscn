@@ -49,8 +49,7 @@ position = Vector2( 850, 420 )
 position = Vector2( 369.103, 364.537 )
 z_index = 1
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
-amountGoodCards = 10
-amountBadCards = 3
+amountBadCards = 7
 radiusX = 300.0
 radiusY = 160.0
 

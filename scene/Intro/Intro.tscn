@@ -1,5 +1,48 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scene/Intro/Touch.gd" type="Script" id=1]
+[ext_resource path="res://art/intro1.png" type="Texture" id=2]
+[ext_resource path="res://art/intro2.png" type="Texture" id=3]
+[ext_resource path="res://art/intro3.png" type="Texture" id=4]
 
 [node name="Intro" type="Node"]
+
+[node name="Touch" type="Control" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="1" type="Sprite" parent="Touch" index="0"]
+
+texture = ExtResource( 2 )
+offset = Vector2( 512, 300 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="2" type="Sprite" parent="Touch" index="1"]
+
+visible = false
+texture = ExtResource( 3 )
+offset = Vector2( 512, 300 )
+_sections_unfolded = [ "Material", "Offset", "Visibility" ]
+
+[node name="3" type="Sprite" parent="Touch" index="2"]
+
+visible = false
+texture = ExtResource( 4 )
+offset = Vector2( 512, 300 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
 
 

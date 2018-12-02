@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Jamming Dilemma"
-run/main_scene="res://scene/Main/Main.tscn"
+run/main_scene="res://scene/Intro/Intro.tscn"
 config/icon="res://icon.png"
 
 [display]
