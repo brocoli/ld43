@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scene/Card.gd" type="Script" id=1]
+[ext_resource path="res://scene/Main/Card.gd" type="Script" id=1]
 [ext_resource path="res://art/card.png" type="Texture" id=2]
 [ext_resource path="res://art/thought.png" type="Texture" id=3]
 [ext_resource path="res://font/Chunkfive.otf" type="DynamicFontData" id=4]
@@ -18,7 +18,7 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
 
-[node name="Card" type="RigidBody2D" index="0" groups=[
+[node name="Card" type="RigidBody2D" groups=[
 "is_card",
 ]]
 
@@ -39,7 +39,7 @@ can_sleep = true
 linear_velocity = Vector2( 0, 0 )
 linear_damp = 10.0
 angular_velocity = 0.0
-angular_damp = 10.0
+angular_damp = 20.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
 
@@ -57,6 +57,7 @@ _sections_unfolded = [ "Material", "Offset", "Region", "Transform", "Visibility"
 
 position = Vector2( 0, -45 )
 texture = ExtResource( 3 )
+_sections_unfolded = [ "Animation" ]
 
 [node name="IdeaLabel" type="Label" parent="." index="3"]
 

@@ -3,7 +3,7 @@
 [ext_resource path="res://art/bg_you_bailed_out.png" type="Texture" id=1]
 [ext_resource path="res://art/Buttons/botao_PlayAgainP.PNG" type="Texture" id=2]
 [ext_resource path="res://art/Buttons/botao_PlayAgainPressedP.PNG" type="Texture" id=3]
-[ext_resource path="res://scene/PlayAgain.gd" type="Script" id=4]
+[ext_resource path="res://scene/Endgame/PlayAgain.gd" type="Script" id=4]
 
 [node name="BailOut" type="Node"]
 

@@ -17,5 +17,7 @@ func try_throw_card_away():
 	var cardHandler = get_node("/root/Main/CardHandler")
 	if cardHandler.focusedCard == null:
 		var joinJamButton = get_node("/root/Main/JoinJam")
-		joinJamButton.check_no_bad_cards()
+		joinJamButton.check_no_bad_cards(self)
+		
 		self.queue_free()
+		get_node("/root/Main/ScreenShake").shake_screen()

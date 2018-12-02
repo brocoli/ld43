@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scene/CardHandler.gd" type="Script" id=1]
-[ext_resource path="res://scene/Card.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scene/TouchDragPhysics.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/Main/CardHandler.gd" type="Script" id=1]
+[ext_resource path="res://scene/Main/Card.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scene/Main/TouchDragPhysics.tscn" type="PackedScene" id=3]
 [ext_resource path="res://art/dummy.png" type="Texture" id=4]
 
 [node name="CardHandler" type="Node2D"]
