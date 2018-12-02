@@ -17,6 +17,8 @@ amountGoodCards = 3
 amountBadCards = 10
 radiusX = 40.0
 radiusY = 20.0
+timePenalty = 5.0
+timeBonus = 1.0
 targetTheme = "Sacrifices must be made"
 
 [node name="Debug" type="Sprite" parent="." index="0"]

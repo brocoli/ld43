@@ -1,6 +1,8 @@
 extends RigidBody2D
 
 var onTrash = false
+var timePenalty
+var timeBonus
 
 func _process(delta):
 	if onTrash:
@@ -20,14 +22,21 @@ func try_throw_card_away():
 		joinJamButton.check_no_bad_cards(self)
 		
 		if is_in_group("is_good_card"):
-			cardHandler.get_node("BadSound").play()
-			get_node("/root/Main/ScreenShake").shake_screen()
+			penalty(cardHandler)
 		elif is_in_group("is_bad_card"):
-			cardHandler.get_node("GoodSound").play()
-			get_node("/root/Main/JoinJam/Bop").bop()
+			bonus(cardHandler)
 		
 		self.queue_free()
 
+func penalty(cardHandler):
+	cardHandler.get_node("BadSound").play()
+	get_node("/root/Main/DoomsdayClock").time_penalty(timePenalty)
+	get_node("/root/Main/ScreenShake").shake_screen()
+
+func bonus(cardHandler):
+	cardHandler.get_node("GoodSound").play()
+	get_node("/root/Main/DoomsdayClock").time_bonus(timeBonus)
+	get_node("/root/Main/JoinJam/Bop").bop()
 
 func _on_Control_gui_input(event):
 	if event is InputEventMouseButton: 
