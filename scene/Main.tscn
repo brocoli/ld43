@@ -4,15 +4,15 @@
 [ext_resource path="res://scene/Trashcan.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scene/CardHandler.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scene/CardPicker.tscn" type="PackedScene" id=4]
-[ext_resource path="res://art/join_jam.png" type="Texture" id=5]
-[ext_resource path="res://art/join_jam_pressed.png" type="Texture" id=6]
-[ext_resource path="res://art/join_jam_disabled.png" type="Texture" id=7]
+[ext_resource path="res://art/Buttons/botao_JoinJamP.png" type="Texture" id=5]
+[ext_resource path="res://art/Buttons/botao_JoinJamHoverP.png" type="Texture" id=6]
+[ext_resource path="res://art/Buttons/botao_JoinJamDisableP.png" type="Texture" id=7]
 [ext_resource path="res://scene/JoinJam.gd" type="Script" id=8]
-[ext_resource path="res://art/bail_out.png" type="Texture" id=9]
-[ext_resource path="res://art/bail_out_pressed.png" type="Texture" id=10]
+[ext_resource path="res://art/Buttons/botao_bailOutP.png" type="Texture" id=9]
+[ext_resource path="res://art/Buttons/botao_bailOuthoverP.png" type="Texture" id=10]
 [ext_resource path="res://scene/BailOut.gd" type="Script" id=11]
 
-[node name="Main" type="Node" index="0"]
+[node name="Main" type="Node"]
 
 _sections_unfolded = [ "Pause", "Z Index" ]
 
@@ -79,6 +79,7 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
 texture_disabled = ExtResource( 7 )
 script = ExtResource( 8 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Textures", "Theme" ]
@@ -106,6 +107,7 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 10 )
 script = ExtResource( 11 )
 _sections_unfolded = [ "Textures" ]
 
