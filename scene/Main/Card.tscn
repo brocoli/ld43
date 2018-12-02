@@ -18,7 +18,7 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
 
-[node name="Card" type="RigidBody2D" groups=[
+[node name="Card" type="RigidBody2D" index="0" groups=[
 "is_card",
 ]]
 

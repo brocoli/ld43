@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scene/Main/CardHandler.gd" type="Script" id=1]
 [ext_resource path="res://scene/Main/Card.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scene/Main/TouchDragPhysics.tscn" type="PackedScene" id=3]
 [ext_resource path="res://art/dummy.png" type="Texture" id=4]
+[ext_resource path="res://art/good.ogg" type="AudioStream" id=5]
+[ext_resource path="res://art/ominous.ogg" type="AudioStream" id=6]
 
 [node name="CardHandler" type="Node2D"]
 
@@ -23,5 +25,27 @@ visible = false
 modulate = Color( 0.490902, 0.109726, 0.597656, 0.501961 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="GoodSound" type="AudioStreamPlayer2D" parent="." index="1"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="BadSound" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 
