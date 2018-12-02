@@ -10,6 +10,7 @@ extents = Vector2( 31.8622, 57.2465 )
 
 [node name="Card" type="RigidBody2D" groups=[
 "is_bad_card",
+"is_card",
 ]]
 
 input_pickable = false
@@ -41,7 +42,5 @@ texture = ExtResource( 2 )
 
 shape = SubResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
-
-[connection signal="body_entered" from="." to="." method="_on_Card_body_entered"]
 
 

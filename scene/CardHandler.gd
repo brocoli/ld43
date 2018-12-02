@@ -31,7 +31,6 @@ func spawn_card(i):
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and not event.pressed and focusedCard != null:
-		get_tree().set_input_as_handled()
 		drop_card()
 
 func _input(event):
@@ -44,11 +43,11 @@ func try_lift_card(bodies):
 		var card = null
 		var max_z = -INF
 		
-		for stuffzor in bodies:
-			var new_z = stuffzor.z_index
+		for body in bodies:
+			var new_z = body.z_index
 			if max_z < new_z:
 				max_z = new_z
-				card = stuffzor
+				card = body
 
 		if card != null:
 			lift_card(card)
@@ -65,6 +64,7 @@ func lift_card(card):
 	joint.set_node_b(card.get_path())
 
 func drop_card():
+	get_tree().set_input_as_handled()
 	get_node("/root/Main").remove_child(draggableBody)
 	draggableBody = null
 

@@ -1,17 +1,21 @@
 extends RigidBody2D
 
-func _on_Card_body_entered(body):
-	var trashcan = get_node("/root/Main/Trashcan")
-	if body == trashcan:
+var onTrash = false
+
+func _process(delta):
+	if onTrash:
+		try_throw_card_away()
+
+func handle_hover_into_trash(trashcan):
+	onTrash = true
+	try_throw_card_away()
+
+func handle_hover_out_of_trash(trashcan):
+	onTrash = false
+
+func try_throw_card_away():
+	var cardHandler = get_node("/root/Main/CardHandler")
+	if cardHandler.focusedCard == null:
 		var joinJamButton = get_node("/root/Main/JoinJam")
 		joinJamButton.check_no_bad_cards()
-		
-		cancel_touches()
 		self.queue_free()
-
-func cancel_touches():
-	var event = InputEventMouseButton.new()
-	event.button_index=BUTTON_LEFT
-	event.position = position
-	event.pressed = false
-	get_tree().input_event(event)
