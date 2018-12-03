@@ -6,7 +6,7 @@
 [ext_resource path="res://art/intro3.png" type="Texture" id=4]
 [ext_resource path="res://art/Buttons/202310_7778_button-2.ogg" type="AudioStream" id=5]
 
-[node name="Intro" type="Node" index="0"]
+[node name="Intro" type="Node"]
 
 [node name="Touch" type="Control" parent="." index="0"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://art/bg_you_bailed_out.png" type="Texture" id=1]
+[ext_resource path="res://art/timeout.png" type="Texture" id=1]
 [ext_resource path="res://scene/Endgame/PlayAgain.tscn" type="PackedScene" id=2]
 [ext_resource path="res://font/Chunkfive.otf" type="DynamicFontData" id=3]
 
@@ -12,7 +12,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="TimesUp" type="Node"]
+[node name="TimesUp" type="Node" index="0"]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
