@@ -13,11 +13,13 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="DoomsdayClock" type="Node2D"]
+[node name="DoomsdayClock" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Visibility" ]
-totalTime = 20
+totalTime = 50
+timePenalty = 30.0
+timeBonus = 3.0
 
 [node name="ClockFace" type="Label" parent="." index="0"]
 

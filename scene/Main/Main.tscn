@@ -54,8 +54,6 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index"
 amountBadCards = 7
 radiusX = 300.0
 radiusY = 160.0
-timePenalty = 30.0
-timeBonus = 3.0
 
 [node name="JoinJam" type="TextureButton" parent="." index="4"]
 
@@ -147,7 +145,6 @@ amplitude = 5.0
 [node name="DoomsdayClock" parent="." index="7" instance=ExtResource( 15 )]
 
 position = Vector2( 851.647, 13.5661 )
-totalTime = 50
 
 [connection signal="button_down" from="JoinJam" to="JoinJam/PressSound" method="play_correctly"]
 

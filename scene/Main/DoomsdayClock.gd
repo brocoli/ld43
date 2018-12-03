@@ -1,6 +1,8 @@
 extends Node
 
 export (int) var totalTime
+export (float) var timePenalty
+export (float) var timeBonus
 
 var startTime
 
@@ -18,12 +20,12 @@ func _process(delta):
 func set_clock_label(secs):
 	$ClockFace.set_text("00:%02d" % secs)
 
-func time_penalty(secs):
-	if secs > 0:
-		startTime -= secs
+func time_penalty():
+	if timePenalty > 0:
+		startTime -= timePenalty
 		$"ClockFace/ColorTransition".penalty()
 
-func time_bonus(secs):
-	if secs > 0:
-		startTime += secs
+func time_bonus():
+	if timeBonus > 0:
+		startTime += timeBonus
 		$"ClockFace/ColorTransition".bonus()

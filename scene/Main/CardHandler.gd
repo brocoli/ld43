@@ -6,8 +6,6 @@ export (int) var amountGoodCards
 export (int) var amountBadCards
 export (float) var radiusX
 export (float) var radiusY
-export (float) var timePenalty
-export (float) var timeBonus
 
 export (String) var targetTheme
 
@@ -69,9 +67,6 @@ func spawn_card(i):
 	card.position = pos
 	card.rotation = rot
 	card.z_index = i
-	
-	card.timePenalty = timePenalty
-	card.timeBonus = timeBonus
 	
 	set_card_good_or_bad(card)
 	

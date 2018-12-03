@@ -1,8 +1,6 @@
 extends RigidBody2D
 
 var onTrash = false
-var timePenalty
-var timeBonus
 
 func _process(delta):
 	if onTrash:
@@ -30,12 +28,12 @@ func try_throw_card_away():
 
 func penalty(cardHandler):
 	cardHandler.get_node("BadSound").play()
-	get_node("/root/Main/DoomsdayClock").time_penalty(timePenalty)
+	get_node("/root/Main/DoomsdayClock").time_penalty()
 	get_node("/root/Main/ScreenShake").shake_screen()
 
 func bonus(cardHandler):
 	cardHandler.get_node("GoodSound").play()
-	get_node("/root/Main/DoomsdayClock").time_bonus(timeBonus)
+	get_node("/root/Main/DoomsdayClock").time_bonus()
 	get_node("/root/Main/JoinJam/Bop").bop()
 
 func _on_Control_gui_input(event):
