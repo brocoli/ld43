@@ -29,6 +29,7 @@ softness = 0.0
 
 [node name="Debug" type="Sprite" parent="." index="2"]
 
+visible = false
 modulate = Color( 0.738281, 0.0692139, 0.0692139, 0.501961 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Visibility" ]

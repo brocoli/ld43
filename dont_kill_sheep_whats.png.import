@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/play_again_pressed.png-6f894322296b5b22cd6deb896968ffa5.stex"
+path="res://.import/dont_kill_sheep_whats.png-36a8a1cc6c87756ef8502ff902c80cd2.stex"
 
 [deps]
 
-source_file="res://art/play_again_pressed.png"
-dest_files=[ "res://.import/play_again_pressed.png-6f894322296b5b22cd6deb896968ffa5.stex" ]
+source_file="res://dont_kill_sheep_whats.png"
+dest_files=[ "res://.import/dont_kill_sheep_whats.png-36a8a1cc6c87756ef8502ff902c80cd2.stex" ]
 
 [params]
 

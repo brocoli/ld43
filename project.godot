@@ -12,14 +12,18 @@ config_version=3
 
 config/name="Jamming Dilemma"
 run/main_scene="res://scene/Intro/Intro.tscn"
+boot_splash/image="res://dont_kill_sheep_whats.png"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/resizable=false
-window/size/borderless=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[editor]
+
+default_environment="res://default_env.tres"
 
 [global]
 
@@ -28,5 +32,4 @@ window=false
 [rendering]
 
 quality/intended_usage/framebuffer_allocation=0
-quality/filters/msaa=3
 environment/default_environment="res://default_env.tres"
