@@ -1,0 +1,7 @@
+Chunkfive.otf
+This font was taken from https://www.fontsquirrel.com/
+its licence is "SIL Open Font Licence.txt"
+
+DIGITALDREAM.ttf
+This font was taken from https://www.dafont.com/
+its license is "pizzadude.dk License.txt"

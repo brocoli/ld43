@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://art/asset_bg.png" type="Texture" id=1]
 [ext_resource path="res://scene/Main/Trashcan.tscn" type="PackedScene" id=2]
@@ -7,12 +7,14 @@
 [ext_resource path="res://art/Buttons/botao_JoinJamHoverP.png" type="Texture" id=5]
 [ext_resource path="res://art/Buttons/botao_JoinJamDisableP.png" type="Texture" id=6]
 [ext_resource path="res://scene/Main/JoinJam.gd" type="Script" id=7]
-[ext_resource path="res://scene/Main/Bop.gd" type="Script" id=8]
-[ext_resource path="res://art/Buttons/botao_bailOutP.png" type="Texture" id=9]
-[ext_resource path="res://art/Buttons/botao_bailOuthoverP.png" type="Texture" id=10]
-[ext_resource path="res://scene/Main/BailOut.gd" type="Script" id=11]
-[ext_resource path="res://scene/Main/ScreenShake.gd" type="Script" id=12]
-[ext_resource path="res://scene/Main/DoomsdayClock.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scene/Common/PressSound.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scene/Common/ReleaseSound.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scene/Main/Bop.gd" type="Script" id=10]
+[ext_resource path="res://art/Buttons/botao_bailOutP.png" type="Texture" id=11]
+[ext_resource path="res://art/Buttons/botao_bailOuthoverP.png" type="Texture" id=12]
+[ext_resource path="res://scene/Main/BailOut.gd" type="Script" id=13]
+[ext_resource path="res://scene/Main/ScreenShake.gd" type="Script" id=14]
+[ext_resource path="res://scene/Main/DoomsdayClock.tscn" type="PackedScene" id=15]
 
 [node name="Main" type="Node2D" index="0"]
 
@@ -52,6 +54,8 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index"
 amountBadCards = 7
 radiusX = 300.0
 radiusY = 160.0
+timePenalty = 30.0
+timeBonus = 3.0
 
 [node name="JoinJam" type="TextureButton" parent="." index="4"]
 
@@ -81,7 +85,11 @@ texture_disabled = ExtResource( 6 )
 script = ExtResource( 7 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Textures", "Theme" ]
 
-[node name="Bop" type="Tween" parent="JoinJam" index="0"]
+[node name="PressSound" parent="JoinJam" index="0" instance=ExtResource( 8 )]
+
+[node name="ReleaseSound" parent="JoinJam" index="1" instance=ExtResource( 9 )]
+
+[node name="Bop" type="Tween" parent="JoinJam" index="2"]
 
 repeat = false
 playback_process_mode = 1
@@ -89,7 +97,7 @@ playback_speed = 1.0
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
-script = ExtResource( 8 )
+script = ExtResource( 10 )
 period = 0.2
 amplitude = 1.1
 
@@ -114,10 +122,14 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 9 )
-texture_pressed = ExtResource( 10 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+script = ExtResource( 13 )
 _sections_unfolded = [ "Textures" ]
+
+[node name="PressSound" parent="BailOut" index="0" instance=ExtResource( 8 )]
+
+[node name="ReleaseSound" parent="BailOut" index="1" instance=ExtResource( 9 )]
 
 [node name="ScreenShake" type="Tween" parent="." index="6"]
 
@@ -127,16 +139,25 @@ playback_speed = 1.0
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
-script = ExtResource( 12 )
+script = ExtResource( 14 )
 _sections_unfolded = [ "playback" ]
 period = 0.05
 amplitude = 5.0
 
-[node name="DoomsdayClock" parent="." index="7" instance=ExtResource( 13 )]
+[node name="DoomsdayClock" parent="." index="7" instance=ExtResource( 15 )]
 
 position = Vector2( 851.647, 13.5661 )
+totalTime = 50
+
+[connection signal="button_down" from="JoinJam" to="JoinJam/PressSound" method="play_correctly"]
+
+[connection signal="button_up" from="JoinJam" to="JoinJam/ReleaseSound" method="play_correctly"]
 
 [connection signal="pressed" from="JoinJam" to="JoinJam" method="_on_JoinJam_pressed"]
+
+[connection signal="button_down" from="BailOut" to="BailOut/PressSound" method="play_correctly"]
+
+[connection signal="button_up" from="BailOut" to="BailOut/ReleaseSound" method="play_correctly"]
 
 [connection signal="pressed" from="BailOut" to="BailOut" method="_on_BailOut_pressed"]
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/202314__7778__click-1.ogg-31c3ab193defac98cbbbb2f23edcd10c.oggstr"
+
+[deps]
+
+source_file="res://art/Buttons/202314__7778__click-1.ogg"
+dest_files=[ "res://.import/202314__7778__click-1.ogg-31c3ab193defac98cbbbb2f23edcd10c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=200.0
