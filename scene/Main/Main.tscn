@@ -16,7 +16,7 @@
 [ext_resource path="res://scene/Main/ScreenShake.gd" type="Script" id=14]
 [ext_resource path="res://scene/Main/DoomsdayClock.tscn" type="PackedScene" id=15]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 _sections_unfolded = [ "Pause", "Z Index" ]
 

@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scene/Intro/Touch.gd" type="Script" id=1]
 [ext_resource path="res://art/intro1.png" type="Texture" id=2]
 [ext_resource path="res://art/intro2.png" type="Texture" id=3]
 [ext_resource path="res://art/intro3.png" type="Texture" id=4]
+[ext_resource path="res://art/Buttons/202310_7778_button-2.ogg" type="AudioStream" id=5]
 
-[node name="Intro" type="Node"]
+[node name="Intro" type="Node" index="0"]
 
 [node name="Touch" type="Control" parent="." index="0"]
 
@@ -44,5 +45,16 @@ texture = ExtResource( 4 )
 offset = Vector2( 512, 300 )
 flip_h = true
 _sections_unfolded = [ "Offset" ]
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="Touch" index="3"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 
