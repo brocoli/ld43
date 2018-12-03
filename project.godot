@@ -12,7 +12,7 @@ config_version=3
 
 config/name="Jamming Dilemma"
 run/main_scene="res://scene/Intro/Intro.tscn"
-boot_splash/image="res://dont_kill_sheep_whats.png"
+boot_splash/image="res://ld43.png"
 config/icon="res://icon.png"
 
 [display]
