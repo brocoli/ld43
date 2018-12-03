@@ -13,7 +13,7 @@ func _process(delta):
 	if time >= 0:
 		set_clock_label(time)
 	else:
-		get_tree().change_scene("res://scene/Endgame/BailOut.tscn")
+		get_tree().change_scene("res://scene/Endgame/TimesUp.tscn")
 
 func set_clock_label(secs):
 	$ClockFace.set_text("00:%02d" % secs)
